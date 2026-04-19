@@ -7,14 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const targetPercent = parseInt(bar.getAttribute("data-percent"));
     let current = 0;
 
-    const interval = setInterval(() => {
+    const animate = setInterval(() => {
       if (current >= targetPercent) {
-        clearInterval(interval);
+        clearInterval(animate);
       } else {
         current++;
         progress.style.width = current + "%";
         percentText.textContent = current + "%";
       }
-    }, 20); // speed of increment
+    }, 15); // smoother animation
   });
 });
